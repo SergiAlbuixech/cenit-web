@@ -1,22 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <link rel="icon" type="image/ico" href="../image/icono.jpg" sizes="64x64" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ajos Albuixech</title>
+    <title>Carrito</title>
+
+    <!-- Tu CSS principal -->
     <link rel="stylesheet" href="../init/style.css" />
+    <!-- Script para cargar header y footer (si usas includes) -->
     <script src="../init/include.js" defer></script>
+    <!-- Script de la lógica del carrito -->
+    <script src="../init/carrito.js" defer></script>
+
+    <!-- Estilos adicionales para el formulario de envío -->
+    <style>
+      /* Contenedor principal del formulario de envío */
+      .form-envio {
+        display: none; /* Oculto por defecto */
+        margin: 30px auto; /* Centra horizontalmente y da espacio vertical */
+        max-width: 600px; /* Ancho máximo */
+        background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+        padding: 20px 30px;
+        border-radius: 8px;
+        text-align: left; /* Alinea el texto a la izquierda */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .form-envio h3 {
+        text-align: center;
+        margin-top: 0;
+      }
+
+      /* Etiquetas e inputs en línea */
+      .form-envio label {
+        display: inline-block;
+        width: 120px; /* Ajusta a tu gusto */
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .form-envio input[type="text"] {
+        width: calc(100% - 130px); /* Deja espacio para el label */
+        padding: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      /* Sección de método de pago */
+      .form-envio .metodo-pago {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .form-envio .metodo-pago label {
+        width: auto;
+        margin-right: 20px;
+      }
+
+      /* Botón para finalizar */
+      .form-envio button {
+        display: block;
+        margin: 20px auto 0;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .form-envio button:hover {
+        background-color: #45a049;
+      }
+    </style>
   </head>
-  <body>
-    <!-- Se cargará automáticamente el header -->
-    <div data-include="../init/header.html"></div>
+
+  <body class="Carrito">
+    <header>
+      <h1 class="main-title">Dragon Battles</h1>
+      <nav class="navbar">
+        <ul class="menu">
+          <li><a href="inicio.html">Inicio</a></li>
+          <li><a href="empresa.html">Empresa</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li class="dropdown">
+            <a href="#">Productos ▼</a>
+            <ul class="dropdown-menu">
+              <li><a href="Magnesio.html">Magnesio</a></li>
+              <li><a href="Gomas.html">Gomas</a></li>
+              <li><a href="Paralelas.html">Paralelas</a></li>
+              <li><a href="Anillas.html">Anillas</a></li>
+            </ul>
+          </li>
+          <li><a href="carrito.html">Carrito</a></li>
+          <li><a href="usuario.html">Usuario</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <main>
-      <h2>Bienvenido a mi página CARRITO</h2>
-      <p>Contenido de la página...</p>
+      <h2 class="centrado1">Carrito de Compras</h2>
+
+      <table class="claseMagnesio" id="tabla-carrito">
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Los productos se insertarán aquí con JavaScript -->
+        </tbody>
+      </table>
+
+      <h3 class="centrado2">Total: <span id="total-precio">0€</span></h3>
+
+      <div class="mapa-container">
+        <button id="vaciar-carrito" class="btn-panel">Vaciar Carrito</button>
+        <!-- Botón para iniciar la compra -->
+        <button id="comprar-carrito" class="btn-panel">Comprar Carrito</button>
+
+        <!-- CONTENEDOR que mostrará los 3 botones tras “loguearse” -->
+        <div id="botones-usuario" style="display: none; margin-left: 20px">
+          <button id="continuar-comprando" class="btn-panel">
+            Continuar Comprando
+          </button>
+          <button id="formalizar-pedido" class="btn-panel">
+            Formalizar Pedido
+          </button>
+          <button id="cerrar-sesion" class="btn-panel">Cerrar Sesión</button>
+        </div>
+      </div>
+
+      <!-- FORMULARIO de envío y método de pago (inicialmente oculto) -->
+      <div id="form-envio" class="form-envio">
+        <h3>Dirección de Envío</h3>
+        <label>Nombre:</label>
+        <input type="text" id="nombre-envio" /><br />
+        <label>Dirección:</label>
+        <input type="text" id="direccion-envio" /><br />
+        <label>Ciudad:</label>
+        <input type="text" id="ciudad-envio" /><br />
+        <label>Provincia:</label>
+        <input type="text" id="provincia-envio" /><br />
+        <label>Código Postal:</label>
+        <input type="text" id="cp-envio" /><br />
+
+        <h3 class="metodo-pago">Método de Pago</h3>
+        <div class="metodo-pago">
+          <label
+            ><input type="radio" name="pago" value="tarjeta" checked />
+            Tarjeta</label
+          >
+          <label
+            ><input type="radio" name="pago" value="paypal" /> PayPal</label
+          >
+        </div>
+        <button id="finalizar-compra">Finalizar Compra</button>
+      </div>
+
+      <!-- MENSAJE final de agradecimiento (inicialmente oculto) -->
+      <div
+        id="mensaje-final"
+        style="display: none; text-align: center; margin-top: 20px"
+      >
+        <h2>¡Muchas gracias por su compra!</h2>
+        <p>Su pedido ha sido procesado con éxito.</p>
+        <button id="volver-inicio">Continuar</button>
+      </div>
     </main>
 
-    <!-- Se cargará automáticamente el footer -->
-    <div data-include="../init/footer.html"></div>
+    <footer>
+      <p>
+        &copy; 2025 Dragon Battles. Todos los derechos reservados.<br />
+        Síguenos en: @DragonBattles
+      </p>
+    </footer>
   </body>
 </html>

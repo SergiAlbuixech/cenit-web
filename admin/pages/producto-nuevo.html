@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <link
+      rel="icon"
+      type="image/ico"
+      href="../images/360_F_7324855_mx4CEBWTr81XLOrlQccCROtP2uNR7xbk.jpg"
+      sizes="64x64"
+    />
+    <meta charset="UTF-8" />
+    <title>Insertar Nuevo Producto</title>
+    <!-- Carga tu CSS general (style.css) con la clase .admin-body, .admin-navbar, etc. -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- Archivo JS específico para insertar un nuevo producto -->
+    <script src="../js/producto-nuevo.js" defer></script>
+  </head>
+  <body class="admin-body">
+    <header>
+      <h1 class="main-title">Insertar Nuevo Producto</h1>
+      <nav class="admin-navbar">
+        <ul>
+          <li><a href="usuarios.html">Usuarios</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="index.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="admin-container">
+      <!-- Formulario para insertar un producto -->
+      <form id="form-nuevo-producto">
+        <!-- Categoría -->
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="categoria">
+          <option value="">-- Seleccionar categoría --</option>
+          <option value="Magnesio">Magnesio</option>
+          <option value="Goma">Goma</option>
+          <option value="Paralelas">Paralelas</option>
+          <option value="Anillas">Anillas</option>
+          <!-- Opción especial para crear una nueva categoría -->
+          <option value="Nueva">Nueva categoría...</option>
+        </select>
+
+        <!-- Imagen (Examinar) -->
+        <label>Imagen:</label>
+        <button type="button" id="btnExaminar">Examinar</button>
+        <span id="foto-estado">No se ha seleccionado ninguna foto</span>
+
+        <!-- Descripción -->
+        <label for="descripcion">Descripción:</label>
+        <input
+          type="text"
+          id="descripcion"
+          name="descripcion"
+          placeholder="Descripción del producto"
+        />
+
+        <!-- Precio -->
+        <label for="precio">Precio (€):</label>
+        <input
+          type="number"
+          id="precio"
+          name="precio"
+          step="0.01"
+          placeholder="Ej: 19.99"
+        />
+
+        <!-- Existencias -->
+        <label for="existencias">Existencias:</label>
+        <input
+          type="number"
+          id="existencias"
+          name="existencias"
+          placeholder="Ej: 10"
+        />
+
+        <!-- Botones -->
+        <div class="button-group">
+          <button type="button" id="btnInsertar">Insertar</button>
+          <button type="button" id="btnVolver">Volver</button>
+        </div>
+      </form>
+    </main>
+
+    <footer class="admin-footer">
+      <p>Insertar Nuevo Producto © 2025</p>
+    </footer>
+  </body>
+</html>

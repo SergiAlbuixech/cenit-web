@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/ico" href="../image/icono.jpg" sizes="64x64" />
+    <title>Panel de usuario</title>
+    <!-- Tu CSS general -->
+    <link rel="stylesheet" href="../init/style.css" />
+    <!-- CSS específico para el panel -->
+    <link rel="stylesheet" href="../init/panel.css" />
+    <script src="../init/include.js" defer></script>
+    <script src="../init/panel.js" defer></script>
+  </head>
+  <body class="registrarse-bg">
+    <!-- Header incluido automáticamente -->
+    <div data-include="../init/header.html"></div>
+
+    <main>
+      <h2>Bienvenido al Panel de Usuario</h2>
+      <div class="btn-container">
+        <button id="btnCambiarDatos" class="btn-panel">Cambiar datos</button>
+        <button id="btnGestionarPedidos" class="btn-panel">
+          Gestionar pedidos
+        </button>
+        <button id="btnCerrarSesion" class="btn-panel">Cerrar sesión</button>
+      </div>
+    </main>
+
+    <!-- Footer incluido automáticamente -->
+    <div data-include="../init/footer.html"></div>
+  </body>
+</html>

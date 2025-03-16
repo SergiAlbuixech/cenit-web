@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/ico" href="../image/icono.jpg" sizes="64x64" />
+    <title>Cambiar datos</title>
+    <link rel="stylesheet" href="../init/style.css" />
+    <script src="../init/include.js" defer></script>
+    <script src="../init/cambiarDatos.js" defer></script>
+  </head>
+  <body class="registrarse-bg">
+    <div data-include="../init/header.html"></div>
+
+    <main>
+      <h2>Modificar tus datos</h2>
+
+      <div class="form-container">
+        <form>
+          <table>
+            <tr>
+              <td><label for="usuario">Usuario:</label></td>
+              <td><input type="text" id="usuario" /></td>
+            </tr>
+            <tr>
+              <td><label for="clave">Clave:</label></td>
+              <td><input type="password" id="clave" /></td>
+            </tr>
+            <tr>
+              <td><label for="repetirClave">Repetir Clave:</label></td>
+              <td><input type="password" id="repetirClave" /></td>
+            </tr>
+            <tr>
+              <td><label for="nombre">Nombre:</label></td>
+              <td><input type="text" id="nombre" /></td>
+            </tr>
+            <tr>
+              <td><label for="apellidos">Apellidos:</label></td>
+              <td><input type="text" id="apellidos" /></td>
+            </tr>
+            <tr>
+              <td><label for="domicilio">Domicilio:</label></td>
+              <td><input type="text" id="domicilio" /></td>
+            </tr>
+            <tr>
+              <td><label for="poblacion">Población:</label></td>
+              <td><input type="text" id="poblacion" /></td>
+            </tr>
+            <tr>
+              <td><label for="provincia">Provincia:</label></td>
+              <td><input type="text" id="provincia" /></td>
+            </tr>
+            <tr>
+              <td><label for="cp">C.P.:</label></td>
+              <td><input type="text" id="cp" /></td>
+            </tr>
+            <tr>
+              <td><label for="nif">NIF/Ident.:</label></td>
+              <td><input type="text" id="nif" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="btn-row">
+                <button type="button" id="btnGuardar">Guardar cambios</button>
+                <button type="button" id="btnVolver" class="cancel-btn">
+                  Volver
+                </button>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+
+      <!-- Mensaje de confirmación (inicialmente oculto) -->
+      <p id="mensaje" style="display: none; color: green; text-align: center">
+        ¡Datos cambiados con éxito!
+      </p>
+    </main>
+
+    <div data-include="../init/footer.html"></div>
+  </body>
+</html>

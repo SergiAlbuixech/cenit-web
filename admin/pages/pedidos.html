@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <link
+      rel="icon"
+      type="image/ico"
+      href="../images/360_F_7324855_mx4CEBWTr81XLOrlQccCROtP2uNR7xbk.jpg"
+      sizes="64x64"
+    />
+    <meta charset="UTF-8" />
+    <title>Pedidos</title>
+    <!-- Ajusta la ruta al CSS según tu carpeta -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Ajusta la ruta al JS según tu carpeta -->
+    <script src="../js/pedidos.js" defer></script>
+  </head>
+  <!-- Páginas de administración con class="admin-body" -->
+  <body class="admin-body">
+    <header>
+      <h1 class="main-title">Administración de Pedidos</h1>
+      <nav class="admin-navbar">
+        <ul>
+          <li><a href="usuarios.html">Usuarios</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="index.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="admin-container">
+      <h2>Pedidos</h2>
+
+      <!-- Filtro (no hace nada real, solo muestra un mensaje) -->
+      <div class="filter-container">
+        <label for="filtro-select">Filtrar por:</label>
+        <select id="filtro-select">
+          <option value="usuario">Usuario</option>
+          <option value="producto">Producto</option>
+          <option value="fecha">Fecha (igual)</option>
+        </select>
+        <input type="text" id="filtro-valor" placeholder="Valor del filtro" />
+        <button id="btnFiltrar">Filtrar</button>
+      </div>
+
+      <!-- Contenedor de pedidos -->
+      <div class="pedidos-container">
+        <!-- Pedido 1 -->
+        <div class="pedido-card">
+          <div class="pedido-header">
+            <span class="pedido-fecha">Fecha: 2025-03-10</span>
+            <span class="pedido-usuario">Usuario: enrique</span>
+            <span class="pedido-importe">Importe: 99,95€</span>
+          </div>
+          <div class="pedido-detalles">
+            <strong>Descripción:</strong> Curso de batalla clase 127 <br />
+            <strong>Precio:</strong> 49,97€ <br />
+            <strong>Cantidad:</strong> 2
+          </div>
+          <div class="pedido-estado">
+            <label>Estado:</label>
+            <select class="estado-select">
+              <option value="Pendiente" selected>Pendiente</option>
+              <option value="Enviado">Enviado</option>
+              <option value="Entregado">Entregado</option>
+              <option value="Cancelado">Cancelado</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Pedido 2 -->
+        <div class="pedido-card">
+          <div class="pedido-header">
+            <span class="pedido-fecha">Fecha: 2025-03-12</span>
+            <span class="pedido-usuario">Usuario: javier</span>
+            <span class="pedido-importe">Importe: 64,58€</span>
+          </div>
+          <div class="pedido-detalles">
+            <strong>Descripción:</strong> Estación especial <br />
+            <strong>Precio:</strong> 64,58€ <br />
+            <strong>Cantidad:</strong> 1
+          </div>
+          <div class="pedido-estado">
+            <label>Estado:</label>
+            <select class="estado-select">
+              <option value="Pendiente">Pendiente</option>
+              <option value="Enviado" selected>Enviado</option>
+              <option value="Entregado">Entregado</option>
+              <option value="Cancelado">Cancelado</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Pedido 3 -->
+        <div class="pedido-card">
+          <div class="pedido-header">
+            <span class="pedido-fecha">Fecha: 2025-03-15</span>
+            <span class="pedido-usuario">Usuario: ricardo</span>
+            <span class="pedido-importe">Importe: 999,95€</span>
+          </div>
+          <div class="pedido-detalles">
+            <strong>Descripción:</strong> Cuerdas pasada clase constitution
+            <br />
+            <strong>Precio:</strong> 999,95€ <br />
+            <strong>Cantidad:</strong> 1
+          </div>
+          <div class="pedido-estado">
+            <label>Estado:</label>
+            <select class="estado-select">
+              <option value="Pendiente">Pendiente</option>
+              <option value="Enviado">Enviado</option>
+              <option value="Entregado" selected>Entregado</option>
+              <option value="Cancelado">Cancelado</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Pedido 4 -->
+        <div class="pedido-card">
+          <div class="pedido-header">
+            <span class="pedido-fecha">Fecha: 2025-03-18</span>
+            <span class="pedido-usuario">Usuario: raul</span>
+            <span class="pedido-importe">Importe: 550,00€</span>
+          </div>
+          <div class="pedido-detalles">
+            <strong>Descripción:</strong> Goma alta resistencia <br />
+            <strong>Precio:</strong> 550,00€ <br />
+            <strong>Cantidad:</strong> 1
+          </div>
+          <div class="pedido-estado">
+            <label>Estado:</label>
+            <select class="estado-select">
+              <option value="Pendiente">Pendiente</option>
+              <option value="Enviado">Enviado</option>
+              <option value="Entregado">Entregado</option>
+              <option value="Cancelado" selected>Cancelado</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="admin-footer">
+      <!-- Footer (opcional) -->
+    </footer>
+
+    <!-- Modal para mensajes ("Estado cambiado", "Búsqueda filtrada", etc.) -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <p id="modal-message"></p>
+        <button id="modal-ok">Aceptar</button>
+      </div>
+    </div>
+  </body>
+</html>

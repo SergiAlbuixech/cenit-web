@@ -1,0 +1,642 @@
+/* -----------------------------------------------------------
+   1. Importar la fuente Poppins (opcional) 
+   ----------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+/* -----------------------------------------------------------
+         2. Estilos globales
+         ----------------------------------------------------------- */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; /* Asegura que ocupen toda la altura del viewport */
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f8f8f8;
+}
+
+/* -----------------------------------------------------------
+         3. Estilos para el LOGIN (index.html) 
+         (No usar class="admin-body" en el login)
+         ----------------------------------------------------------- */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Ajusta según necesites */
+}
+
+.login-form {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form label {
+  font-weight: bold;
+}
+
+.login-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#btnAcceder {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#btnAcceder:hover {
+  background-color: #0069d9;
+}
+
+/* -----------------------------------------------------------
+         4. Layout para las PÁGINAS DE ADMIN (productos, usuarios...) 
+         Usa <body class="admin-body"> en esas páginas
+         ----------------------------------------------------------- */
+.admin-body {
+  display: flex; /* Conviertes el body en contenedor flex */
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+}
+
+.admin-body header {
+  flex: 0 0 auto; /* El header ocupa solo su contenido */
+}
+
+.admin-body .admin-container {
+  flex: 1 0 auto; /* El main se expande para llenar el espacio sobrante */
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.admin-body .admin-footer {
+  flex: 0 0 auto;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* -----------------------------------------------------------
+         5. Navbar de administración 
+         ----------------------------------------------------------- */
+.admin-navbar {
+  background-color: #333; /* Fondo oscuro */
+  padding: 1rem 2rem; /* Espaciado vertical y horizontal */
+}
+
+.admin-navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.admin-navbar li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.admin-navbar li a:hover {
+  color: #ddd;
+}
+
+/* -----------------------------------------------------------
+         6. Tabla de administración 
+         ----------------------------------------------------------- */
+.admin-table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.admin-table thead {
+  background-color: #f2f2f2;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+/* Efecto hover en las filas */
+.admin-table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+/* -----------------------------------------------------------
+         7. Imagen estática en la tabla
+         ----------------------------------------------------------- */
+.product-img {
+  width: 80px;
+  height: auto;
+  display: block;
+}
+
+/* -----------------------------------------------------------
+         8. Botones (Examinar, Modificar)
+         ----------------------------------------------------------- */
+.btn-examinar,
+.btn-modificar {
+  background-color: #007bff;
+  color: #fff;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.btn-examinar:hover,
+.btn-modificar:hover {
+  background-color: #0069d9;
+}
+
+/* Estado del texto al subir foto */
+.foto-estado {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Inputs de descripción, precio, existencias */
+.descripcion,
+.precio,
+.existencias {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+/* -----------------------------------------------------------
+         9. Modal para mensajes 
+         ----------------------------------------------------------- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+/* Clase para ocultar el modal */
+.hidden {
+  display: none;
+}
+
+.btn-insertar-nuevo {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.btn-insertar-nuevo:hover {
+  background-color: #218838;
+}
+.btn-eliminar {
+  background-color: #dc3545; /* rojo */
+  color: #fff;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 5px; /* Separación respecto al botón "Modificar" */
+}
+
+.btn-eliminar:hover {
+  background-color: #c82333; /* un rojo más oscuro */
+}
+/* Contenedor del filtro */
+.filter-container {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Contenedor principal de los pedidos */
+.pedidos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Cada pedido en forma de "card" */
+.pedido-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Encabezado del pedido */
+.pedido-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.pedido-fecha,
+.pedido-usuario,
+.pedido-importe {
+  font-weight: 600;
+}
+
+/* Detalles del pedido */
+.pedido-detalles {
+  margin-bottom: 0.5rem;
+}
+
+/* Sección del estado */
+.pedido-estado {
+  margin-top: 0.5rem;
+}
+
+/* Modal (ya lo tenías, pero por si acaso) */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Aumentar el tamaño de fuente base para todo el documento */
+html,
+body {
+  font-size: 18px; /* Antes era 16px, por ejemplo */
+}
+
+/* Si quieres que los títulos sean aún más grandes */
+.main-title {
+  font-size: 2.4rem; /* Ajusta según tu preferencia */
+}
+
+/* Para el contenedor de pedidos, un poco más de espacio */
+.pedidos-container {
+  gap: 1.5rem; /* Separación vertical entre pedidos */
+}
+
+/* Cada tarjeta (pedido) con más padding y texto un poco mayor */
+.pedido-card {
+  padding: 1.5rem;
+  font-size: 1.1rem; /* Tamaño de texto dentro de la tarjeta */
+}
+
+/* Si quieres que el filtro también se vea más grande */
+.filter-container {
+  gap: 1rem;
+}
+
+.filter-container select,
+.filter-container input,
+.filter-container button {
+  font-size: 1rem; /* Ajusta según necesites */
+  padding: 0.5rem; /* Más espacio interno en los elementos del filtro */
+}
+
+/* Variables de color y tipografía */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --background-color: #f5f5f5;
+  --header-bg: #2c3e50;
+  --nav-bg: #34495e;
+  --font-color: #333;
+  --font-family: "Poppins", sans-serif;
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fondo degradado para todo el body */
+body {
+  font-family: var(--font-family);
+  font-size: 20px; /* Aumentamos el font-size base (antes 18px) */
+  line-height: 1.7; /* Un poco más de espacio entre líneas */
+  background: linear-gradient(135deg, var(--background-color), #ddd);
+  color: var(--font-color);
+}
+
+/* Header y main */
+header {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 25px; /* Un poco más de padding */
+  text-align: center;
+}
+.main-title {
+  font-size: 3rem; /* Antes 2.5rem */
+  margin-bottom: 10px;
+}
+
+/* Navbar */
+.admin-navbar {
+  background: var(--nav-bg);
+  padding: 1.5rem 2.5rem; /* Aumentado */
+}
+.admin-navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Más separación */
+  list-style: none;
+}
+.admin-navbar li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem; /* Antes 1.1rem */
+  transition: color 0.3s ease;
+}
+.admin-navbar li a:hover {
+  color: var(--secondary-color);
+}
+
+/* Contenedores */
+.admin-container {
+  padding: 40px;
+  min-height: calc(100vh - 200px); /* Ajustamos por el mayor header */
+}
+
+/* Estilo para la tabla de administración */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.admin-table th,
+.admin-table td {
+  padding: 50px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 1.2rem; /* Antes 1rem */
+}
+.admin-table thead {
+  background: var(--primary-color);
+  color: #fff;
+}
+.admin-table tbody tr:hover {
+  background: #f9f9f9;
+}
+
+/* Botones generales */
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px; /* Aumentado (antes 10px 16px) */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 1.2rem; /* Aumentamos el tamaño del texto del botón */
+}
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* Botones específicos */
+.btn-examinar,
+.btn-modificar {
+  background: var(--primary-color);
+  color: #fff;
+}
+.btn-examinar:hover,
+.btn-modificar:hover {
+  background: #2980b9; /* un tono más oscuro de #3498db */
+}
+.btn-eliminar {
+  background: var(--accent-color);
+  color: #fff;
+  margin-left: 5px;
+}
+.btn-eliminar:hover {
+  background: #c0392b; /* un tono más oscuro de #e74c3c */
+}
+.btn-insertar-nuevo {
+  background: var(--secondary-color);
+  color: #fff;
+  font-size: 1.3rem; /* un poco mayor */
+}
+.btn-insertar-nuevo:hover {
+  background: #27ae60; /* un tono más oscuro de #2ecc71 */
+}
+
+/* Footer */
+.admin-footer {
+  background: var(--header-bg);
+  color: #fff;
+  text-align: center;
+  padding: 20px; /* Aumentado */
+}
+
+/* Estilos para Pedidos (Tarjetas) */
+.filter-container {
+  display: flex;
+  gap: 1.5rem; /* más separación */
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.filter-container select,
+.filter-container input,
+.filter-container button {
+  font-size: 1.1rem; /* antes 1rem */
+  padding: 10px; /* antes 8px */
+}
+.pedidos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* más espacio entre tarjetas */
+}
+.pedido-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem; /* antes 1.5rem */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-size: 1.2rem; /* antes 1.1rem */
+}
+.pedido-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem; /* un poco más */
+  margin-bottom: 1rem; /* más espacio */
+}
+.pedido-header span {
+  font-weight: 600;
+}
+.pedido-detalles {
+  margin-bottom: 1rem;
+}
+.pedido-estado {
+  margin-top: 0.5rem;
+}
+
+/* Modal (para mensajes) */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 2rem; /* Aumentado */
+  border-radius: 8px;
+  width: 400px; /* un poco más ancho */
+  text-align: center;
+  font-size: 1.2rem; /* mayor tamaño de fuente en el modal */
+}
+.hidden {
+  display: none;
+}
+
+/* Para la cabecera de "Productos" con botón de insertar */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem; /* más espacio */
+}
+.product-header h2 {
+  margin: 0;
+  font-size: 2rem; /* más grande que el resto de secciones */
+}
+
+/* -----------------------------------------------------------
+         10. Estilos para Insertar Nuevo Pedido (pedido-nuevo.html)
+   ----------------------------------------------------------- */
+#form-nuevo-pedido {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#form-nuevo-pedido label {
+  font-weight: 600;
+}
+
+#form-nuevo-pedido input,
+#form-nuevo-pedido select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Al final de style.css, por ejemplo */
+#form-nuevo-producto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#form-nuevo-producto label {
+  font-weight: 600;
+}
+
+#form-nuevo-producto input,
+#form-nuevo-producto select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}

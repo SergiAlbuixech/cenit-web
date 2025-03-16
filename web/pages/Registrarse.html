@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/ico" href="../image/icono.jpg" sizes="64x64" />
+    <title>Registrarse</title>
+    <!-- Tu CSS principal -->
+    <link rel="stylesheet" href="../init/style.css" />
+    <!-- CSS adicional, si lo deseas -->
+    <link rel="stylesheet" href="../init/acceder.css" />
+    <!-- Script para header/footer -->
+    <script src="../init/include.js" defer></script>
+    <!-- Script con la lógica de registro -->
+    <script src="../init/registrarse.js" defer></script>
+  </head>
+  <body class="registrarse-bg">
+    <!-- Header con data-include -->
+    <div data-include="../init/header.html"></div>
+
+    <main>
+      <h2>Bienvenido, por favor regístrate</h2>
+
+      <div class="form-container">
+        <form>
+          <table>
+            <tr>
+              <td><label for="usuario">Usuario:</label></td>
+              <td><input type="text" id="usuario" name="usuario" /></td>
+            </tr>
+            <tr>
+              <td><label for="clave">Clave:</label></td>
+              <td><input type="password" id="clave" name="clave" /></td>
+            </tr>
+            <tr>
+              <td><label for="repetirClave">Repetir Clave:</label></td>
+              <td>
+                <input type="password" id="repetirClave" name="repetirClave" />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="nombre">Nombre:</label></td>
+              <td><input type="text" id="nombre" name="nombre" /></td>
+            </tr>
+            <tr>
+              <td><label for="apellidos">Apellidos:</label></td>
+              <td><input type="text" id="apellidos" name="apellidos" /></td>
+            </tr>
+            <tr>
+              <td><label for="domicilio">Domicilio:</label></td>
+              <td><input type="text" id="domicilio" name="domicilio" /></td>
+            </tr>
+            <tr>
+              <td><label for="poblacion">Población:</label></td>
+              <td><input type="text" id="poblacion" name="poblacion" /></td>
+            </tr>
+            <tr>
+              <td><label for="provincia">Provincia:</label></td>
+              <td><input type="text" id="provincia" name="provincia" /></td>
+            </tr>
+            <tr>
+              <td><label for="cp">C.P.:</label></td>
+              <td><input type="text" id="cp" name="cp" /></td>
+            </tr>
+            <tr>
+              <td><label for="nif">NIF/Ident.:</label></td>
+              <td><input type="text" id="nif" name="nif" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="btn-row">
+                <!-- type="button" para que no recargue el formulario -->
+                <button type="button" id="btnRegistrar">Registrar</button>
+                <button type="button" class="cancel-btn" id="btnCancelar">
+                  Cancelar
+                </button>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer con data-include -->
+    <div data-include="../init/footer.html"></div>
+  </body>
+</html>

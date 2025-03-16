@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Iniciar Sesión para Registrarse</title>
+    <link rel="icon" type="image/ico" href="../image/icono.jpg" sizes="64x64" />
+    <!-- Tu CSS principal -->
+    <link rel="stylesheet" href="../init/style.css" />
+    <!-- CSS específico para esta página -->
+    <link rel="stylesheet" href="../init/loginRegistrarse.css" />
+    <!-- Script para incluir header y footer -->
+    <script src="../init/include.js" defer></script>
+    <!-- Script con la lógica de login tras registrarse -->
+    <script src="../init/loginRegistrarse.js" defer></script>
+  </head>
+  <body class="login-registrarse-bg">
+    <!-- Header -->
+    <div data-include="../init/header.html"></div>
+
+    <main>
+      <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form>
+          <label for="usuarioLogin">Usuario:</label>
+          <input type="text" id="usuarioLogin" name="usuarioLogin" />
+
+          <label for="claveLogin">Contraseña:</label>
+          <input type="password" id="claveLogin" name="claveLogin" />
+
+          <button type="button" id="btnAccederRegistrarse">Acceder</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <div data-include="../init/footer.html"></div>
+  </body>
+</html>

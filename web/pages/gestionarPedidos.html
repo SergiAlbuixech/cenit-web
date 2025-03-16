@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/ico" href="../image/icono.jpg" sizes="64x64" />
+    <title>Gestionar Pedidos</title>
+    <link rel="stylesheet" href="../init/style.css" />
+    <!-- Tu CSS específico para esta página (opcional) -->
+    <link rel="stylesheet" href="../init/gestionarPedidos.css" />
+    <script src="../init/include.js" defer></script>
+    <!-- Lógica de pedidos -->
+    <script src="../init/gestionarPedidos.js" defer></script>
+  </head>
+  <body class="GestionarPedidos">
+    <!-- Header -->
+    <div data-include="../init/header.html"></div>
+
+    <main>
+      <h2 style="color: #000">Mis Pedidos</h2>
+      <div id="pedidos-container" style="margin: 20px; color: #000">
+        <!-- Aquí se inyectarán los pedidos -->
+      </div>
+
+      <!-- Botón para volver al panel -->
+      <div style="text-align: center; margin: 20px">
+        <button id="btnVolver" class="btn-panel">Volver</button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <div data-include="../init/footer.html"></div>
+  </body>
+</html>

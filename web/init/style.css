@@ -75,13 +75,703 @@ header {
 /*  -------------- FOOTER ------------- */
 
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  position: static; /* o remove esta línea */
+  /* bottom: 0; remove */
+  width: 100%;
   width: 100%;
   background-color: #333;
   color: white;
   text-align: center;
   padding: 10px;
   height: 50px;
+}
+
+.texto-calistenia {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.texto-calistenia h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.texto-calistenia p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Estilo de la sección de empresa */
+.empresa {
+  position: relative;
+  width: 100%;
+  height: 800px; /* Ajusta la altura según necesites */
+  margin-top: 50px; /* Espaciado superior para separar del resto del contenido */
+}
+
+.empresa {
+  position: relative;
+  height: 100vh; /* La altura ocupa el 100% de la ventana */
+}
+
+.empresa-contenido {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black; /* Color negro para el texto */
+  z-index: 2; /* Asegura que el contenido esté por encima de la imagen */
+  text-align: center; /* Centra el texto */
+  max-width: 80%; /* Para que el texto no se estire demasiado */
+}
+
+.empresa::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../image/front2.jpg"); /* Aquí pon la ruta de tu imagen */
+  background-size: cover; /* Asegura que la imagen cubra todo el espacio */
+  background-position: center;
+  opacity: 0.3; /* Baja opacidad para que el texto sea más legible */
+  z-index: 1; /* Coloca la imagen detrás del contenido */
+}
+/* Asegura que la imagen de fondo cubra toda la pantalla */
+.fondo {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background-image: url("../image/inicio.jpg"); /* Aquí pones la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Asegura que la imagen de fondo cubra toda la pantalla */
+.inicio-fondo {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background-image: url("../image/inicio.jpg"); /* Aquí debes poner la ruta de tu imagen */
+  background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Fondo oscuro semitransparente para mejorar la legibilidad del texto */
+.inicio-mensaje {
+  text-align: center;
+  color: white; /* Color del texto */
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.1); /* Fondo oscuro con opacidad */
+  padding: 40px;
+  max-width: 80%;
+  border-radius: 10px; /* Bordes redondeados para un look moderno */
+}
+
+/* Estilos para el título */
+.inicio-mensaje h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el texto del mensaje */
+.inicio-mensaje p {
+  font-size: 1.3em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Si quieres añadir un botón (opcional) */
+.inicio-mensaje a {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #ff5722; /* Color del botón */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+.inicio-mensaje a:hover {
+  background-color: #e64a19; /* Color al pasar el mouse por encima */
+}
+
+.centrado1 {
+  text-align: center;
+  font-style: italic; /* Mantiene la cursiva */
+  text-decoration: underline; /* Mantiene el subrayado */
+  font-size: 48px; /* Tamaño equilibrado */
+  color: #222; /* Un tono más oscuro para mejor contraste */
+  font-weight: bold; /* Hace que el texto resalte más */
+  text-transform: uppercase; /* Hace que el título se vea más imponente */
+  letter-spacing: 2px; /* Agrega espacio entre letras para mejor legibilidad */
+  margin-bottom: 20px; /* Separa el título del contenido siguiente */
+}
+.centrado2 {
+  text-align: center;
+  font-style: normal; /* Mantiene la cursiva */
+  font-size: 30px; /* Tamaño equilibrado */
+  color: #222; /* Un tono más oscuro para mejor contraste */
+  font-weight: bold; /* Hace que el texto resalte más */
+  text-transform: uppercase; /* Hace que el título se vea más imponente */
+  letter-spacing: 2px; /* Agrega espacio entre letras para mejor legibilidad */
+  margin-bottom: 20px; /* Separa el título del contenido siguiente */
+  margin-top: 40px; /* Baja el texto unas dos o tres líneas */
+}
+.mapa-container {
+  display: flex;
+  justify-content: center; /* Centra el mapa horizontalmente */
+  margin-top: 20px; /* Espacio arriba del mapa */
+}
+
+.mapa-container iframe {
+  width: 80%; /* Hace que el mapa ocupe el 80% del ancho de la pantalla */
+  max-width: 800px; /* Limita el ancho máximo */
+  height: 400px; /* Altura del mapa */
+  border-radius: 10px; /* Esquinas redondeadas */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para efecto más elegante */
+}
+
+/* Estilos para la tabla con clase "claseMagnesio" */
+.claseMagnesio {
+  background-color: #f2f2f2; /* Color gris claro */
+  border-radius: 10px; /* Bordes redondeados para que se vea más elegante */
+  padding: 10px; /* Espaciado interno */
+  width: 100%; /* Hace que la tabla ocupe todo el ancho */
+  table-layout: fixed; /* Fija el tamaño de las celdas */
+  border-collapse: collapse; /* Elimina los espacios entre celdas */
+}
+/* Estilos generales para todas las celdas (th y td) dentro de la tabla */
+.claseMagnesio th,
+.claseMagnesio td {
+  border-bottom: 2px solid #ccc; /* Línea gris separadora */
+  padding: 10px;
+  text-align: left;
+}
+/* Alternar colores en las filas */
+.claseMagnesio tr:nth-child(odd) {
+  background-color: #e0e0e0; /* Gris más oscuro en filas impares */
+}
+
+/* Agregar una línea más gruesa debajo de los encabezados */
+.claseMagnesio thead th {
+  border-bottom: 4px solid #333; /* Línea más gruesa para el encabezado */
+}
+
+.mag1 {
+  font-size: 35px;
+}
+.tamMliq {
+  font-size: 25px;
+}
+
+.form-container {
+  margin: 20px auto; /* Centra horizontalmente */
+  width: 60%; /* Ajusta el ancho a tu gusto */
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Tabla que contiene los campos */
+.form-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.form-container td {
+  padding: 10px;
+}
+
+/* Estilo para las etiquetas */
+.form-container label {
+  font-weight: bold;
+}
+
+/* Inputs de texto y contraseña */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 95%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Botones */
+.form-container button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #4caf50; /* Botón principal en verde */
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #45a049;
+}
+
+/* Botón de "Cancelar" en rojo */
+.form-container .cancel-btn {
+  background-color: #f44336;
+}
+
+.form-container .cancel-btn:hover {
+  background-color: #e53935;
+}
+
+/* Alinea el contenido de la última fila (botones) */
+.btn-row {
+  text-align: center;
+}
+
+/* Fondo de imagen para el panel */
+body.registrarse-bg {
+  margin: 0;
+  padding: 0;
+  background: url("../image/bandera.webp") no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo para el main del panel */
+main {
+  padding: 20px;
+  text-align: center;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+main h2 {
+  margin-top: 40px;
+  font-size: 2.5em;
+}
+
+/* Contenedor para los botones */
+.btn-container {
+  margin: 30px auto;
+}
+
+/* Botones con un diseño más atractivo */
+.btn-panel {
+  display: inline-block;
+  padding: 15px 25px;
+  margin: 15px;
+  font-size: 1.2em;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+/* Botón Cambiar datos (azul) */
+#btnCambiarDatos {
+  background-color: #2196f3;
+}
+
+/* Botón Gestionar pedidos (verde) */
+#btnGestionarPedidos {
+  background-color: #4caf50;
+}
+
+/* Botón Cerrar sesión (rojo) */
+#btnCerrarSesion {
+  background-color: #f44336;
+}
+
+/* Efecto hover en los botones */
+.btn-panel:hover {
+  transform: scale(1.05);
+}
+#pedidos-container {
+  color: #000; /* Texto en negro */
+}
+
+body.Carrito {
+  margin: 0;
+  padding: 0;
+  background: url("../image/carrito7.avif") no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+#btnVolver {
+  background-color: #17a2b8;
+}
+
+#vaciar-carrito {
+  background-color: lightcoral;
+}
+#comprar-carrito {
+  background-color: #4caf50;
+}
+#continuar-comprando {
+  background-color: #2196f3;
+}
+#formalizar-pedido {
+  background-color: khaki;
+}
+#cerrar-sesion {
+  background-color: #dc3545;
+}
+#Añadir {
+  background-color: #28a745;
+}
+
+body.contacto {
+  margin: 0;
+  padding: 0;
+  /* Imagen de fondo (ajusta la ruta y el nombre de la imagen) */
+  background: url("../image/contacto3.jpg") no-repeat center center fixed;
+  background-size: cover; /* "cover" llena la pantalla, 
+                             "contain" muestra todo sin recortar 
+                             o usa "80% auto" si prefieres */
+  font-family: Arial, sans-serif;
+}
+
+.contact-content {
+  background-color: rgba(255, 255, 255, 0.9); /* Semitransparente */
+  max-width: 900px; /* Ancho máximo para no estirarlo demasiado */
+  margin: 40px auto; /* Centra horizontalmente y da espacio vertical */
+  padding: 20px 30px;
+  border-radius: 8px; /* Bordes redondeados */
+  color: #000; /* Texto en negro */
+}
+
+.centrado2 {
+  text-align: center;
+  font-size: 1.8em;
+  margin: 20px 0;
+  color: #333; /* Un tono gris oscuro */
+}
+
+.mapa-container {
+  display: flex;
+  justify-content: center; /* Centra el iframe */
+  margin: 20px 0;
+}
+
+.mapa-container iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+}
+
+/*formulario*/
+.formulario {
+  display: flex;
+  flex-direction: column; /* Los campos uno debajo de otro */
+  gap: 15px; /* Espacio entre campos */
+  max-width: 600px; /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+.formulario label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #444; /* Tono un poco más oscuro para las etiquetas */
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Ajustamos el tamaño del textarea */
+.formulario textarea {
+  min-height: 120px;
+  resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+/* Botón de envío */
+.formulario .btn {
+  align-self: flex-start; /* Se alinea a la izquierda dentro del form */
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formulario .btn:hover {
+  background-color: #45a049;
+}
+
+/* Fondo a pantalla completa para simular un "pop-up" */
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Sobre todo el contenido */
+}
+
+/* Caja blanca centrada */
+.login-modal {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  width: 400px; /* Ancho fijo (ajusta a tu gusto) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-modal h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Formulario interno */
+.login-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-modal label {
+  font-weight: bold;
+}
+
+.login-modal input[type="text"],
+.login-modal input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Botón "Acceder" */
+.btn-acceder {
+  align-self: flex-start; /* Alineado a la izquierda */
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.btn-acceder:hover {
+  background-color: #0069d9;
+}
+body.login-registrarse-bg {
+  margin: 0;
+  padding: 0;
+  background: url("../image/bandera.webp") no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 20px 30px;
+  border-radius: 8px;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.login-container label {
+  font-weight: bold;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-container button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: center;
+  font-size: 1em;
+}
+
+.login-container button:hover {
+  background-color: #0069d9;
+}
+
+/* Fondo exclusivo para la página de login del carrito */
+body.login-carrito-bg {
+  margin: 0;
+  padding: 0;
+  background: url("../image/login_carrito_bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor del login */
+.login-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 20px 30px;
+  border-radius: 8px;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Formulario */
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.login-container label {
+  font-weight: bold;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Botón "Acceder" */
+.btn-acceder {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: center;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.btn-acceder:hover {
+  background-color: #0069d9;
+}
+.form-envio {
+  display: none; /* Se oculta por defecto; se muestra con JS */
+  margin: 30px auto; /* Centra horizontalmente y da espacio vertical */
+  max-width: 600px; /* Ancho máximo del contenedor */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Fondo blanco semitransparente */
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: left; /* Alinea el texto a la izquierda (opcional) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+}
+
+.form-envio h3 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.form-envio label {
+  display: inline-block;
+  width: 120px; /* Ajusta según prefieras */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-envio input[type="text"] {
+  width: calc(100% - 130px); /* O un ancho fijo, según quieras */
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Ajusta si quieres que cada campo vaya en línea separada */
+.form-envio label,
+.form-envio input {
+  margin: 5px 0;
+  vertical-align: middle;
+}
+
+.form-envio .metodo-pago {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-envio .metodo-pago label {
+  width: auto; /* Para que no se aplique el ancho de 120px en radios */
+  margin-right: 20px;
+}
+
+.form-envio button {
+  display: block;
+  margin: 20px auto 0; /* Centra el botón Finalizar */
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-envio button:hover {
+  background-color: #45a049;
+}
+
+#mensaje-final h2 {
+  font-size: 2em; /* Aumenta el título */
+  margin-bottom: 10px; /* Un poco de espacio debajo */
+}
+
+#mensaje-final p {
+  font-size: 1.2em; /* Texto un poco más grande */
+  margin-bottom: 20px; /* Espacio antes del botón */
 }

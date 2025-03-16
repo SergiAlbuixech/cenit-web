@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Iniciar Sesión para Carrito</title>
+    <!-- Tu CSS principal -->
+    <link rel="stylesheet" href="../init/style.css" />
+    <!-- CSS específico para esta página -->
+    <link rel="stylesheet" href="../init/loginCarrito.css" />
+    <!-- Script para incluir header y footer -->
+    <script src="../init/include.js" defer></script>
+    <!-- Script específico para esta página -->
+    <script src="../init/loginCarrito.js" defer></script>
+  </head>
+  <body class="login-carrito-bg">
+    <!-- Header (cargado automáticamente) -->
+    <div data-include="../init/header.html"></div>
+
+    <main>
+      <div class="login-container">
+        <h2>Iniciar Sesión para Comprar</h2>
+        <form>
+          <label for="usuarioCarrito">Usuario:</label>
+          <input type="text" id="usuarioCarrito" name="usuarioCarrito" />
+
+          <label for="claveCarrito">Contraseña:</label>
+          <input type="password" id="claveCarrito" name="claveCarrito" />
+
+          <button type="button" id="btnAccederCarrito" class="btn-acceder">
+            Acceder
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer (cargado automáticamente) -->
+    <div data-include="../init/footer.html"></div>
+  </body>
+</html>

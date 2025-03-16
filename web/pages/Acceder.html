@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Acceder</title>
+    <!-- Tu CSS principal -->
+    <link rel="icon" type="image/ico" href="../image/icono.jpg" sizes="64x64" />
+    <link rel="stylesheet" href="../init/style.css" />
+    <!-- CSS específico para esta página -->
+    <link rel="stylesheet" href="../init/acceder.css" />
+    <!-- Script para incluir header y footer -->
+    <script src="../init/include.js" defer></script>
+    <!-- Script específico para esta página (ver acceder.js) -->
+    <script src="../init/acceder.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Header (cargado automáticamente) -->
+    <div data-include="../init/header.html"></div>
+
+    <!-- Contenido principal (simulando el pop-up) -->
+    <div class="login-overlay">
+      <div class="login-modal">
+        <h2>Iniciar Sesión</h2>
+        <form>
+          <label for="usuario">Usuario:</label>
+          <input type="text" id="usuario" name="usuario" />
+
+          <label for="clave">Clave:</label>
+          <input type="password" id="clave" name="clave" />
+
+          <button type="button" id="btnAcceder" class="btn-acceder">
+            Acceder
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer (cargado automáticamente) -->
+    <div data-include="../init/footer.html"></div>
+  </body>
+</html>
